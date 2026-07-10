@@ -1,6 +1,6 @@
 let balance = Number(localStorage.getItem("balance")) || 0;
 let seconds = Number(localStorage.getItem("seconds")) || 0;
-
+let lastReward = Number(localStorage.getItem("lastReward")) || 0;
 document.addEventListener("DOMContentLoaded", function () {
     updateBalance();
     updateTimer();
@@ -78,18 +78,30 @@ function showPage(page) {
             link
                 );
 
-    } else if (page == "reward") {
+} else if (page == "reward") {
 
-        balance += 0.001;
-        updateBalance();
-localStorage.setItem("balance", balance);
-        alert(
-            "🎁 Daily Reward Claimed!\n\n" +
-            "You received: 0.001 TON"
-        );
+    let now = Date.now();
 
-    } else if (page == "task") {
+    if (now - lastReward < 86400000) {
+        let remain = Math.ceil((86400000 - (now - lastReward)) / 3600000);
 
+        alert("⏳ Daily Reward already claimed.\n\nCome back in " + remain + " hour(s).");
+        return;
+    }
+
+    balance += 0.001;
+    updateBalance();
+    localStorage.setItem("balance", balance);
+
+    lastReward = now;
+    localStorage.setItem("lastReward", lastReward);
+
+    alert(
+        "🎁 Daily Reward Claimed!\n\n" +
+        "You received: 0.001 TON"
+    );
+
+} else if (page == "task") {
         alert("📋 Task (Coming Soon)");
 
     } else if (page == "profile") {
