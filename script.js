@@ -73,24 +73,19 @@ function showPage(page) {
             "💰 Referral Earnings: 0.0000 TON\n\n" +
             "🔗 Your Link:\n" +
             link
-        );
+                );
 
     } else if (page == "reward") {
-        } else if (page == "task") {
 
-    alert("📋 Task (Coming Soon)");
+        balance += 0.001;
+        updateBalance();
 
-} else if (page == "profile") {
+        alert(
+            "🎁 Daily Reward Claimed!\n\n" +
+            "You received: 0.001 TON"
+        );
 
-    balance += 0.001;
-    updateBalance();
-
-    alert(
-        "🎁 Daily Reward Claimed!\n\n" +
-        "You received: 0.001 TON"
-    );
-
-} else if (page == "task") {
+    } else if (page == "task") {
 
         alert("📋 Task (Coming Soon)");
 
