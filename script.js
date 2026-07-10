@@ -77,9 +77,15 @@ function showPage(page) {
 
     } else if (page == "reward") {
 
-        alert("🎁 Daily Reward (Coming Soon)");
+    balance += 0.001;
+    updateBalance();
 
-    } else if (page == "task") {
+    alert(
+        "🎁 Daily Reward Claimed!\n\n" +
+        "You received: 0.001 TON"
+    );
+
+} else if (page == "task") {
 
         alert("📋 Task (Coming Soon)");
 
