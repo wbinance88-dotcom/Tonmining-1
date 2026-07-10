@@ -17,47 +17,7 @@
 <button id="mineBtn" onclick="startMining()" style="padding:15px 30px;font-size:20px;">
 Claim 0.0009 TON
 </button>
-
-<script>
-let balance = 0;
-let seconds = 0;
-
-function startMining(){
-
-if(seconds>0){
-alert("Please wait 1 hour.");
-return;
-}
-
-alert("Ads 1/3");
-alert("Ads 2/3");
-alert("Ads 3/3");
-
-balance += 0.0009;
-document.getElementById("balance").innerHTML = balance.toFixed(4)+" TON";
-
-seconds = 3600;
-document.getElementById("mineBtn").disabled = true;
-
-let timer = setInterval(function(){
-
-seconds--;
-
-let m = Math.floor(seconds/60);
-let s = seconds%60;
-
-document.getElementById("timer").innerHTML = m+"m "+s+"s";
-
-if(seconds<=0){
-clearInterval(timer);
-document.getElementById("timer").innerHTML="Ready";
-document.getElementById("mineBtn").disabled=false;
-}
-
-},1000);
-
-}
-</script>
+  
   <div class="bottom-nav">
 
 <button onclick="showPage('home')">
