@@ -67,7 +67,14 @@ function showPage(page) {
 
     } else if (page == "referral") {
 
-        let link = "https://tonmining-1.onrender.com/?ref=123456";
+        let userId = localStorage.getItem("userId");
+
+if (!userId) {
+    userId = Math.floor(100000 + Math.random() * 900000).toString();
+    localStorage.setItem("userId", userId);
+}
+
+let link = "https://tonmining-1.onrender.com/?ref=" + userId;
 
         alert(
             "👥 REFERRAL\n\n" +
