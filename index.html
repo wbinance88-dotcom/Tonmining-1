@@ -4,18 +4,58 @@
 <title>TON Mining</title>
 </head>
 
-<body style="background:#111;color:white;text-align:center;font-family:Arial;padding-top:80px;">
+<body style="background:#111;color:white;text-align:center;font-family:Arial;padding-top:60px;">
 
 <h1>⛏️ TON Mining</h1>
-<p>Welcome to TON Mining Bot</p>
 
-<button onclick="startMining()" style="padding:15px 30px;font-size:20px;">
-Start Mining
+<h2>Balance</h2>
+<h1 id="balance">0.0000 TON</h1>
+
+<h2>Next Claim</h2>
+<h2 id="timer">Ready</h2>
+
+<button id="mineBtn" onclick="startMining()" style="padding:15px 30px;font-size:20px;">
+Claim 0.0009 TON
 </button>
 
 <script>
-function startMining() {
-    alert("Mining Started!");
+let balance = 0;
+let seconds = 0;
+
+function startMining(){
+
+if(seconds>0){
+alert("Please wait 1 hour.");
+return;
+}
+
+alert("Ads 1/3");
+alert("Ads 2/3");
+alert("Ads 3/3");
+
+balance += 0.0009;
+document.getElementById("balance").innerHTML = balance.toFixed(4)+" TON";
+
+seconds = 3600;
+document.getElementById("mineBtn").disabled = true;
+
+let timer = setInterval(function(){
+
+seconds--;
+
+let m = Math.floor(seconds/60);
+let s = seconds%60;
+
+document.getElementById("timer").innerHTML = m+"m "+s+"s";
+
+if(seconds<=0){
+clearInterval(timer);
+document.getElementById("timer").innerHTML="Ready";
+document.getElementById("mineBtn").disabled=false;
+}
+
+},1000);
+
 }
 </script>
 
