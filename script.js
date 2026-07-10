@@ -111,14 +111,28 @@ let link = "https://tonmining-1.onrender.com/?ref=" + userId;
 } else if (page == "task") {
         alert("📋 Task (Coming Soon)");
 
-    } else if (page == "profile") {
+} else if (page == "profile") {
 
-        alert(
-            "👤 Profile\n\n" +
-            "Balance: " + balance.toFixed(4) + " TON\n" +
-            "Minimum Withdraw: 0.05 TON"
-        );
+    let wallet = prompt("Enter your TON Wallet Address:");
 
+    if (wallet == null || wallet == "") {
+        return;
     }
 
-}
+    if (balance < 0.05) {
+
+        alert(
+            "❌ Withdraw Failed\n\n" +
+            "Minimum Withdraw is 0.05 TON"
+        );
+
+        return;
+    }
+
+    alert(
+        "✅ Withdraw Request Sent!\n\n" +
+        "Wallet:\n" + wallet + "\n\n" +
+        "Amount: " + balance.toFixed(4) + " TON"
+    );
+
+    }
