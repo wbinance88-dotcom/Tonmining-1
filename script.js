@@ -76,6 +76,11 @@ function showPage(page) {
         );
 
     } else if (page == "reward") {
+        } else if (page == "task") {
+
+    alert("📋 Task (Coming Soon)");
+
+} else if (page == "profile") {
 
     balance += 0.001;
     updateBalance();
