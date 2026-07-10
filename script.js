@@ -27,6 +27,7 @@ function startMining() {
     let timer = setInterval(function () {
 
         seconds--;
+        localStorage.setItem("seconds", seconds);
 
         updateTimer();
 
@@ -34,6 +35,7 @@ function startMining() {
             clearInterval(timer);
             document.getElementById("timer").innerHTML = "Ready";
             document.getElementById("mineBtn").disabled = false;
+            localStorage.setItem("seconds", 0);
         }
 
     }, 1000);
