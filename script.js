@@ -1,5 +1,5 @@
-let balance = 0;
-let seconds = 0;
+let balance = Number(localStorage.getItem("balance")) || 0;
+let seconds = Number(localStorage.getItem("seconds")) || 0;
 
 document.addEventListener("DOMContentLoaded", function () {
     updateBalance();
@@ -19,6 +19,7 @@ function startMining() {
 
     balance += 0.0009;
     updateBalance();
+    localStorage.setItem("balance", balance);
 
     seconds = 3600;
     document.getElementById("mineBtn").disabled = true;
@@ -79,7 +80,7 @@ function showPage(page) {
 
         balance += 0.001;
         updateBalance();
-
+localStorage.setItem("balance", balance);
         alert(
             "🎁 Daily Reward Claimed!\n\n" +
             "You received: 0.001 TON"
