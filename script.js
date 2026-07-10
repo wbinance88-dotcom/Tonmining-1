@@ -61,14 +61,36 @@ function showPage(page) {
 
     if (page == "home") {
         alert("🏠 Home");
+
     } else if (page == "referral") {
-        alert("👥 Referral (Coming Soon)");
+
+        let link = "https://tonmining-1.onrender.com/?ref=123456";
+
+        alert(
+            "👥 REFERRAL\n\n" +
+            "🎁 Reward: 0.01 TON per friend\n\n" +
+            "👥 Total Referrals: 0\n" +
+            "💰 Referral Earnings: 0.0000 TON\n\n" +
+            "🔗 Your Link:\n" +
+            link
+        );
+
     } else if (page == "reward") {
+
         alert("🎁 Daily Reward (Coming Soon)");
+
     } else if (page == "task") {
+
         alert("📋 Task (Coming Soon)");
+
     } else if (page == "profile") {
-        alert("👤 Profile\n\nBalance: " + balance.toFixed(4) + " TON\nMinimum Withdraw: 0.05 TON");
+
+        alert(
+            "👤 Profile\n\n" +
+            "Balance: " + balance.toFixed(4) + " TON\n" +
+            "Minimum Withdraw: 0.05 TON"
+        );
+
     }
 
 }
