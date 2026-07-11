@@ -45,8 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("⛏ Mining Complete!\n\n+0.0009 TON");
     }
 
-    alert("⛏ Mining Complete!\n\n+0.0009 TON");
-    }
+    
 
     }, 1000);
     }
