@@ -30,4 +30,4 @@ window.firebaseGetDoc = getDoc;
 
 console.log("Firebase Connected ✅");
 
-console.log("Firebase Connected ✅");
+
