@@ -8,6 +8,26 @@ let lastReward = Number(localStorage.getItem("lastReward")) || 0;
 document.addEventListener("DOMContentLoaded", function () {
     updateBalance();
     updateTimer();
+
+    if (seconds > 0) {
+        document.getElementById("mineBtn").disabled = true;
+
+        let timer = setInterval(function () {
+
+            seconds--;
+            localStorage.setItem("seconds", seconds);
+
+            updateTimer();
+
+            if (seconds <= 0) {
+                clearInterval(timer);
+                document.getElementById("timer").innerHTML = "Ready";
+                document.getElementById("mineBtn").disabled = false;
+                localStorage.setItem("seconds", 0);
+            }
+
+        }, 1000);
+    }
 });
     
 
