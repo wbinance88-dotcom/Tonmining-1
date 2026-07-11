@@ -55,42 +55,71 @@ document.addEventListener("DOMContentLoaded", function () {
 function startMining() {
 
     if (miningEndTime > Date.now()) {
-
-    alert("⏳ Mining already running");
-
-    return;
+        alert("⏳ Mining already running");
+        return;
     }
 
     alert("Ads 1/3");
     alert("Ads 2/3");
     alert("Ads 3/3");
 
-localStorage.setItem("balance", balance);
+    miningEndTime = Date.now() + (60 * 1000); // Test = 60 sec
 
-// Save balance to Firestore
-const userId = localStorage.getItem("userId") || "test";
+    localStorage.setItem(
+        "miningEndTime",
+        miningEndTime
+    );
 
-setDoc(
-    doc(db, "users", userId),
-    {
-        balance: balance
-    },
-    { merge: true }
-)
-.then(() => {
-    alert("✅ Firestore Save Success");
-})
-.catch((error) => {
-    alert("❌ Firestore Error: " + error.message);
-});
+    seconds = 60;
 
-    miningEndTime = Date.now() + (60 * 1000);
-localStorage.setItem("miningEndTime", miningEndTime);
+    document.getElementById(
+        "mineBtn"
+    ).disabled = true;
 
-seconds = 60;
-    
-    document.getElementById("mineBtn").disabled = true;
-updateTimer();
+    updateTimer();
+
+    let timer = setInterval(function () {
+
+        seconds = Math.ceil(
+            (miningEndTime - Date.now()) / 1000
+        );
+
+        updateTimer();
+
+        if (seconds <= 0) {
+
+            clearInterval(timer);
+
+            balance += 0.0009;
+
+            localStorage.setItem(
+                "balance",
+                balance
+            );
+
+            updateBalance();
+
+            localStorage.removeItem(
+                "miningEndTime"
+            );
+
+            miningEndTime = 0;
+            seconds = 0;
+
+            document.getElementById(
+                "mineBtn"
+            ).disabled = false;
+
+            document.getElementById(
+                "timer"
+            ).innerHTML = "Ready";
+
+            alert(
+                "⛏ Mining Complete!\n\n+0.0009 TON"
+            );
+        }
+
+    }, 1000);
 
 }
 
