@@ -216,7 +216,15 @@ if (copy) {
         return;
     }
 
-    if (balance < 0.05) {
+    let amount = Number(
+        prompt("Enter Withdraw Amount:")
+    );
+
+    if (isNaN(amount)) {
+        return;
+    }
+
+    if (amount < 0.05) {
 
         alert(
             "❌ Withdraw Failed\n\n" +
@@ -226,11 +234,20 @@ if (copy) {
         return;
     }
 
+    if (amount > balance) {
+
+        alert(
+            "❌ Withdraw Failed\n\n" +
+            "Insufficient Balance"
+        );
+
+        return;
+    }
+
     alert(
         "✅ Withdraw Request Sent!\n\n" +
         "Wallet:\n" + wallet + "\n\n" +
-        "Amount: " + balance.toFixed(4) + " TON"
+        "Amount: " + amount.toFixed(4) + " TON"
     );
 
     }
-}
