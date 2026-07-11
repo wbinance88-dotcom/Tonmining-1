@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateBalance();
     updateTimer();
 });
-    updateBalance();
-    updateTimer();
-});
+    
 
 function startMining() {
 
