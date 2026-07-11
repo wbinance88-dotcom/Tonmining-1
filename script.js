@@ -188,26 +188,11 @@ if (copy) {
 
 } else if (page == "reward") {
 
-    let now = Date.now();
+    document.querySelector(".top-card").style.display = "none";
 
-    if (now - lastReward < 86400000) {
-        let remain = Math.ceil((86400000 - (now - lastReward)) / 3600000);
+    document.getElementById("profilePage").style.display = "none";
 
-        alert("⏳ Daily Reward already claimed.\n\nCome back in " + remain + " hour(s).");
-        return;
-    }
-
-    balance += 0.001;
-    updateBalance();
-    localStorage.setItem("balance", balance);
-
-    lastReward = now;
-    localStorage.setItem("lastReward", lastReward);
-
-    alert(
-        "🎁 Daily Reward Claimed!\n\n" +
-        "You received: 0.001 TON"
-    );
+    document.getElementById("rewardPage").style.display = "block";
 
 } else if (page == "task") {
         alert("📋 Task (Coming Soon)");
