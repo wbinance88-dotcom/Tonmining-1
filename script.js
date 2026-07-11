@@ -162,12 +162,15 @@ document.getElementById("rewardPage").style.display = "none";
 
     } else if (page == "referral") {
 
-        let userId = localStorage.getItem("userId");
+    document.querySelector(".top-card").style.display = "none";
 
-if (!userId) {
-    userId = Math.floor(100000 + Math.random() * 900000).toString();
-    localStorage.setItem("userId", userId);
-}
+    document.getElementById("profilePage").style.display = "none";
+
+    document.getElementById("rewardPage").style.display = "none";
+
+    document.getElementById("taskPage").style.display = "none";
+
+    document.getElementById("referralPage").style.display = "block";
 
 let link = "https://tonmining-1.onrender.com/?ref=" + userId;
 
