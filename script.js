@@ -55,9 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function startMining() {
 
-    if (seconds > 0) {
-        alert("Please wait 1 hour.");
-        return;
+    if (miningEndTime > Date.now()) {
+
+    alert("⏳ Mining already running");
+
+    return;
     }
 
     alert("Ads 1/3");
