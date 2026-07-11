@@ -211,3 +211,52 @@ if (copy) {
 
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+
+    let rewardBtn = document.getElementById("dailyRewardBtn");
+
+    if (rewardBtn) {
+
+        rewardBtn.onclick = function () {
+
+            let now = Date.now();
+
+            if (now - lastReward < 86400000) {
+
+                let remain = Math.ceil(
+                    (86400000 - (now - lastReward)) / 3600000
+                );
+
+                alert(
+                    "⏳ Daily Reward already claimed\n\n" +
+                    remain + " hour(s) remaining"
+                );
+
+                return;
+            }
+
+            balance += 0.001;
+
+            localStorage.setItem(
+                "balance",
+                balance
+            );
+
+            updateBalance();
+
+            lastReward = now;
+
+            localStorage.setItem(
+                "lastReward",
+                lastReward
+            );
+
+            alert(
+                "🎁 Daily Reward Claimed!\n\n+0.001 TON"
+            );
+
+        };
+
+    }
+
+});
