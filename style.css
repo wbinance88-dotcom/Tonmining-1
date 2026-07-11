@@ -34,3 +34,31 @@ body{
 .bottom-nav button:hover{
     color:#00d4ff;
 }
+.top-card{
+    background:#1b1b1b;
+    margin:15px;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.balance{
+    font-size:32px;
+    font-weight:bold;
+    color:#00d4ff;
+}
+
+.mine-btn{
+    width:90%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#00aaff;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.mine-btn:disabled{
+    background:#555;
+}
