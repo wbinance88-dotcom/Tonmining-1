@@ -17,6 +17,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export { db };
+export {
+  db,
+  doc,
+  setDoc,
+  getDoc
+};
+
+console.log("Firebase Connected ✅");
 
 console.log("Firebase Connected ✅");
