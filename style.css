@@ -24,11 +24,13 @@ body{
     border-top:1px solid #333;
 }
 
-.bottom-nav button{
-    background:none;
-    border:none;
-    color:white;
-    font-size:14px;
+.bottom-nav button {
+    flex: 1;
+    padding: 15px 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background: transparent;
 }
 
 .bottom-nav button:hover{
