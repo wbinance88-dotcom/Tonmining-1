@@ -55,7 +55,13 @@ setDoc(
         balance: balance
     },
     { merge: true }
-);
+)
+.then(() => {
+    alert("✅ Firestore Save Success");
+})
+.catch((error) => {
+    alert("❌ Firestore Error: " + error.message);
+});
 
     seconds = 3600;
     document.getElementById("mineBtn").disabled = true;
