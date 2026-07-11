@@ -79,14 +79,20 @@ if (!userId) {
 
 let link = "https://tonmining-1.onrender.com/?ref=" + userId;
 
-        alert(
-            "👥 REFERRAL\n\n" +
-            "🎁 Reward: 0.01 TON per friend\n\n" +
-            "👥 Total Referrals: 0\n" +
-            "💰 Referral Earnings: 0.0000 TON\n\n" +
-            "🔗 Your Link:\n" +
-            link
-                );
+        let copy = confirm(
+    "👥 REFERRAL\n\n" +
+    "🎁 Reward: 0.01 TON per friend\n\n" +
+    "👥 Total Referrals: 0\n" +
+    "💰 Referral Earnings: 0.0000 TON\n\n" +
+    "🔗 Your Link:\n\n" +
+    link +
+    "\n\nPress OK to Copy Link"
+);
+
+if (copy) {
+    navigator.clipboard.writeText(link);
+    alert("✅ Referral Link Copied!");
+}
 
 } else if (page == "reward") {
 
