@@ -29,6 +29,6 @@ window.firebaseDoc = doc;
 window.firebaseSetDoc = setDoc;
 window.firebaseGetDoc = getDoc;
 
-console.log("Firebase Connected ✅");
+alert("Firebase Connected ✅");
 
 
