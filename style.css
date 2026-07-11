@@ -26,8 +26,8 @@ body{
 
 .bottom-nav button {
     flex: 1;
-    padding: 15px 5px;
-    font-size: 18px;
+    padding: 18px 5px;
+    font-size: 20px;
     font-weight: bold;
     border: none;
     background: transparent;
