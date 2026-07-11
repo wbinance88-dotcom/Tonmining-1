@@ -29,10 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     balance += 0.0009;
 
-    localStorage.setItem(
-        "balance",
-        balance
-    );
+    localStorage.setItem("balance", balance);
 
     updateBalance();
 
@@ -41,6 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("mineBtn").disabled = false;
 
     localStorage.removeItem("miningEndTime");
+
+    miningEndTime = 0;
+    seconds = 0;
+
+    alert("⛏ Mining Complete!\n\n+0.0009 TON");
+    }
 
     alert("⛏ Mining Complete!\n\n+0.0009 TON");
     }
