@@ -1,3 +1,6 @@
+const db = window.firebaseDB;
+const doc = window.firebaseDoc;
+const setDoc = window.firebaseSetDoc;
 let balance = Number(localStorage.getItem("balance")) || 0;
 let seconds = Number(localStorage.getItem("seconds")) || 0;
 let lastReward = Number(localStorage.getItem("lastReward")) || 0;
