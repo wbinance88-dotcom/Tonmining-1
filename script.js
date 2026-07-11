@@ -210,45 +210,15 @@ if (copy) {
 
 } else if (page == "profile") {
 
-    let wallet = prompt("Enter your TON Wallet Address:");
+    document.querySelector(".top-card").style.display = "none";
 
-    if (wallet == null || wallet == "") {
-        return;
-    }
+    document.getElementById("profilePage").style.display = "block";
 
-    let amount = Number(
-        prompt("Enter Withdraw Amount:")
-    );
+    let userId =
+        localStorage.getItem("userId") || "Guest";
 
-    if (isNaN(amount)) {
-        return;
-    }
-
-    if (amount < 0.05) {
-
-        alert(
-            "❌ Withdraw Failed\n\n" +
-            "Minimum Withdraw is 0.05 TON"
-        );
-
-        return;
-    }
-
-    if (amount > balance) {
-
-        alert(
-            "❌ Withdraw Failed\n\n" +
-            "Insufficient Balance"
-        );
-
-        return;
-    }
-
-    alert(
-        "✅ Withdraw Request Sent!\n\n" +
-        "Wallet:\n" + wallet + "\n\n" +
-        "Amount: " + amount.toFixed(4) + " TON"
-    );
+    document.getElementById("username").innerHTML =
+        "User ID: " + userId;
 
     }
 }
