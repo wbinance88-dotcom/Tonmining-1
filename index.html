@@ -1,45 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>TON Mining</title>
+    <title>TON Mining</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background:#111;color:white;text-align:center;font-family:Arial;padding-top:60px;">
+<body>
 
-<h1>⛏️ TON Mining</h1>
+<div class="container">
 
-<h2>Balance</h2>
-<h1 id="balance">0.0000 TON</h1>
+    <div class="top-card">
 
-<h2>Next Claim</h2>
-<h2 id="timer">Ready</h2>
+        <h1>⛏️ TON Mining</h1>
 
-<button id="mineBtn" onclick="startMining()" style="padding:15px 30px;font-size:20px;">
-Claim 0.0009 TON
-</button>
-  
-  <div class="bottom-nav">
+        <p>Balance</p>
+        <div class="balance" id="balance">
+            0.0000 TON
+        </div>
 
-<button onclick="showPage('home')">
-🏠<br>Home
-</button>
+        <br>
 
-<button onclick="showPage('referral')">
-👥<br>Referral
-</button>
+        <p>Next Claim</p>
+        <h2 id="timer">Ready</h2>
 
-<button onclick="showPage('reward')">
-🎁<br>Daily Reward
-</button>
+        <br>
 
-<button onclick="showPage('task')">
-📋<br>Task
-</button>
+        <button class="mine-btn"
+            id="mineBtn"
+            onclick="startMining()">
 
-<button onclick="showPage('profile')">
-👤<br>Profile
-</button>
+            Claim 0.0009 TON
 
-  </div>
-  <script src="script.js"></script>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="bottom-nav">
+
+    <button onclick="showPage('home')">
+        🏠<br>Home
+    </button>
+
+    <button onclick="showPage('referral')">
+        👥<br>Referral
+    </button>
+
+    <button onclick="showPage('reward')">
+        🎁<br>Reward
+    </button>
+
+    <button onclick="showPage('task')">
+        📋<br>Task
+    </button>
+
+    <button onclick="showPage('profile')">
+        👤<br>Profile
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
 </html>
