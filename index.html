@@ -9,8 +9,9 @@
 <body>
 
 <div class="container">
+
     <div id="pageTitle" style="font-size:22px;font-weight:bold;margin-bottom:20px;">
-🏠 Home
+        🏠 Home
     </div>
 
     <div class="top-card">
@@ -18,6 +19,7 @@
         <h1>⛏️ TON Mining</h1>
 
         <p>Balance</p>
+
         <div class="balance" id="balance">
             0.0000 TON
         </div>
@@ -25,11 +27,13 @@
         <br>
 
         <p>Next Claim</p>
+
         <h2 id="timer">Ready</h2>
 
         <br>
 
-        <button class="mine-btn"
+        <button
+            class="mine-btn"
             id="mineBtn"
             onclick="startMining()">
 
@@ -40,6 +44,8 @@
     </div>
 
 </div>
+
+<!-- Reward Page -->
 <div id="rewardPage" style="display:none;">
 
     <h2>🎁 Daily Reward</h2>
@@ -54,9 +60,6 @@
 
 </div>
 
-</div>
-
-<div class="bottom-nav">
 <div class="bottom-nav">
 
     <button onclick="showPage('home')">
@@ -80,6 +83,7 @@
     </button>
 
 </div>
+
 <script type="module" src="firebase.js"></script>
 <script src="script.js"></script>
 
