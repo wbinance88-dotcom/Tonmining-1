@@ -66,7 +66,7 @@ setDoc(
     alert("❌ Firestore Error: " + error.message);
 });
 
-    seconds = 3600;
+    seconds = 60;
     document.getElementById("mineBtn").disabled = true;
 
     let timer = setInterval(function () {
