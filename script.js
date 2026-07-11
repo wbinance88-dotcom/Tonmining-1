@@ -66,7 +66,7 @@ function showPage(page) {
 
     if (page == "home") {
 
-    document.getElementById("pageTitle").innerHTML = "🏠 Home";
+    alert("🏠 Home");
 
     } else if (page == "referral") {
 
