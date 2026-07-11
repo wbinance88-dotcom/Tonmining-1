@@ -63,7 +63,8 @@ function startMining() {
     alert("Ads 2/3");
     alert("Ads 3/3");
 
-    miningEndTime = Date.now() + (60 * 1000); // Test = 60 sec
+    miningEndTime = Date.now() + (60 * 60 * 1000);
+seconds = 60 * 60;
 
     localStorage.setItem(
         "miningEndTime",
