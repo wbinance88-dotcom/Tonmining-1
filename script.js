@@ -72,22 +72,7 @@ localStorage.setItem("miningEndTime", miningEndTime);
 
 seconds = 60;
     document.getElementById("mineBtn").disabled = true;
-
-    let timer = setInterval(function () {
-
-        seconds--;
-        localStorage.setItem("seconds", seconds);
-
-        updateTimer();
-
-        if (seconds <= 0) {
-            clearInterval(timer);
-            document.getElementById("timer").innerHTML = "Ready";
-            document.getElementById("mineBtn").disabled = false;
-            localStorage.setItem("seconds", 0);
-        }
-
-    }, 1000);
+updateTimer();
 
 }
 
