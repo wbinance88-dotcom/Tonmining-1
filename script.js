@@ -22,9 +22,20 @@ function startMining() {
     alert("Ads 2/3");
     alert("Ads 3/3");
 
-    balance += 0.0009;
-    updateBalance();
-    localStorage.setItem("balance", balance);
+balance += 0.0009;
+updateBalance();
+localStorage.setItem("balance", balance);
+
+// Save balance to Firestore
+const userId = localStorage.getItem("userId") || "test";
+
+setDoc(
+    doc(db, "users", userId),
+    {
+        balance: balance
+    },
+    { merge: true }
+);
 
     seconds = 3600;
     document.getElementById("mineBtn").disabled = true;
