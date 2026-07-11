@@ -1,4 +1,4 @@
-let balance = Number(localStorage.getItem("balance")) || 0;
+}let balance = Number(localStorage.getItem("balance")) || 0;
 let seconds = Number(localStorage.getItem("seconds")) || 0;
 let lastReward = Number(localStorage.getItem("lastReward")) || 0;
 document.addEventListener("DOMContentLoaded", function () {
@@ -136,3 +136,4 @@ let link = "https://tonmining-1.onrender.com/?ref=" + userId;
     );
 
     }
+}
