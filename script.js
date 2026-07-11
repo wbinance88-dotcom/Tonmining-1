@@ -71,6 +71,7 @@ setDoc(
 localStorage.setItem("miningEndTime", miningEndTime);
 
 seconds = 60;
+    
     document.getElementById("mineBtn").disabled = true;
 updateTimer();
 
