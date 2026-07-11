@@ -154,7 +154,11 @@ function showPage(page) {
 
     if (page == "home") {
 
-    alert("🏠 Home");
+    document.querySelector(".top-card").style.display = "block";
+
+document.getElementById("profilePage").style.display = "none";
+
+document.getElementById("rewardPage").style.display = "none";
 
     } else if (page == "referral") {
 
