@@ -81,11 +81,18 @@ function updateBalance() {
     document.getElementById("balance").innerHTML =
         balance.toFixed(4) + " TON";
 }
-
 function updateTimer() {
+
+    if (miningEndTime > 0) {
+        seconds = Math.max(
+            0,
+            Math.ceil((miningEndTime - Date.now()) / 1000)
+        );
+    }
 
     if (seconds <= 0) {
         document.getElementById("timer").innerHTML = "Ready";
+        document.getElementById("mineBtn").disabled = false;
         return;
     }
 
@@ -94,6 +101,7 @@ function updateTimer() {
 
     document.getElementById("timer").innerHTML = m + "m " + s + "s";
 }
+
 
 function showPage(page) {
 
