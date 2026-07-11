@@ -23,6 +23,10 @@ export {
   setDoc,
   getDoc
 };
+window.firebaseDB = db;
+window.firebaseDoc = doc;
+window.firebaseSetDoc = setDoc;
+window.firebaseGetDoc = getDoc;
 
 console.log("Firebase Connected ✅");
 
