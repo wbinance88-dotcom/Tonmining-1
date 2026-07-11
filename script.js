@@ -67,7 +67,10 @@ setDoc(
     alert("❌ Firestore Error: " + error.message);
 });
 
-    seconds = 60;
+    miningEndTime = Date.now() + (60 * 1000);
+localStorage.setItem("miningEndTime", miningEndTime);
+
+seconds = 60;
     document.getElementById("mineBtn").disabled = true;
 
     let timer = setInterval(function () {
