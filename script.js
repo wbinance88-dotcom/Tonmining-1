@@ -23,12 +23,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updateTimer();
 
-        if (seconds <= 0) {
-            clearInterval(timer);
-            document.getElementById("timer").innerHTML = "Ready";
-            document.getElementById("mineBtn").disabled = false;
-            localStorage.removeItem("miningEndTime");
-        }
+    if (seconds <= 0) {
+
+    clearInterval(timer);
+
+    balance += 0.0009;
+
+    localStorage.setItem(
+        "balance",
+        balance
+    );
+
+    updateBalance();
+
+    document.getElementById("timer").innerHTML = "Ready";
+
+    document.getElementById("mineBtn").disabled = false;
+
+    localStorage.removeItem("miningEndTime");
+
+    alert("⛏ Mining Complete!\n\n+0.0009 TON");
+    }
 
     }, 1000);
     }
@@ -46,8 +61,6 @@ function startMining() {
     alert("Ads 2/3");
     alert("Ads 3/3");
 
-balance += 0.0009;
-updateBalance();
 localStorage.setItem("balance", balance);
 
 // Save balance to Firestore
