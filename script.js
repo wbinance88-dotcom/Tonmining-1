@@ -12,24 +12,25 @@ document.addEventListener("DOMContentLoaded", function () {
     updateBalance();
     updateTimer();
 
-    if (seconds > 0) {
-        document.getElementById("mineBtn").disabled = true;
+    if (miningEndTime > Date.now()) {
+    seconds = Math.ceil((miningEndTime - Date.now()) / 1000);
 
-        let timer = setInterval(function () {
+    document.getElementById("mineBtn").disabled = true;
 
-            seconds--;
-            localStorage.setItem("seconds", seconds);
+    let timer = setInterval(function () {
 
-            updateTimer();
+        seconds = Math.ceil((miningEndTime - Date.now()) / 1000);
 
-            if (seconds <= 0) {
-                clearInterval(timer);
-                document.getElementById("timer").innerHTML = "Ready";
-                document.getElementById("mineBtn").disabled = false;
-                localStorage.setItem("seconds", 0);
-            }
+        updateTimer();
 
-        }, 1000);
+        if (seconds <= 0) {
+            clearInterval(timer);
+            document.getElementById("timer").innerHTML = "Ready";
+            document.getElementById("mineBtn").disabled = false;
+            localStorage.removeItem("miningEndTime");
+        }
+
+    }, 1000);
     }
 });
     
