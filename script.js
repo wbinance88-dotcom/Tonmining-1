@@ -184,6 +184,7 @@ if(page=="task"){
 }
 
 if(page=="profile"){
+
     document.getElementById("profilePage").style.display = "block";
 
     let userId =
@@ -191,6 +192,22 @@ if(page=="profile"){
 
     document.getElementById("username").innerHTML =
     "User ID: " + userId;
+
+    const userRef = doc(db, "users", userId);
+
+    getDoc(userRef).then((snap) => {
+
+        if (snap.exists()) {
+
+            let data = snap.data();
+
+            balance = data.balance || 0;
+
+            updateBalance();
+        }
+
+    });
+
 }
 
 }
