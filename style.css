@@ -29,7 +29,45 @@ body{
     height:100%;
     font-size:14px;
     font-weight:bold;
-    .coin-box{
+    color:white;
+    border:none;
+    background:transparent;
+}
+
+.bottom-nav button:hover{
+    color:#00d4ff;
+}
+
+.top-card{
+    background:#1b1b1b;
+    margin:15px;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.balance{
+    font-size:32px;
+    font-weight:bold;
+    color:#00d4ff;
+}
+
+.mine-btn{
+    width:90%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#00aaff;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.mine-btn:disabled{
+    background:#555;
+}
+
+.coin-box{
     width:220px;
     height:220px;
     margin:20px auto;
@@ -74,72 +112,4 @@ body{
     font-size:18px;
     font-weight:bold;
     cursor:pointer;
-    }
-    color:white;
-    border:none;
-    background:transparent;
 }
-
-.bottom-nav button:hover{
-    color:#00d4ff;
-}
-.top-card{
-    background:#1b1b1b;
-    margin:15px;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-}
-
-.balance{
-    font-size:32px;
-    font-weight:bold;
-    color:#00d4ff;
-}
-
-.mine-btn{
-    width:90%;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    background:#00aaff;
-    color:white;
-    font-size:20px;
-    cursor:pointer;
-}
-
-.mine-btn:disabled{
-    background:#555;
-}
-
-.coin-box{
-    width:120px;
-    height:120px;
-    margin:15px auto;
-    border-radius:50%;
-    background:#222;
-    border:4px solid #00d
-    .coin-box{
-    width:120px;
-    height:120px;
-    margin:15px auto;
-    border-radius:50%;
-    background:#222;
-    border:4px solid #00d4ff;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    box-shadow:0 0 20px #00d4ff;
-}
-
-.coin-icon{
-    font-size:45px;
-}
-
-.coin-reward{
-    margin-top:5px;
-    font-size:18px;
-    font-weight:bold;
-    color:#00d4ff;
-    }
