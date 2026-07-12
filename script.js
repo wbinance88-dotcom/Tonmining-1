@@ -1,6 +1,7 @@
 const db = window.firebaseDB;
 const doc = window.firebaseDoc;
 const setDoc = window.firebaseSetDoc;
+const getDoc = window.firebaseGetDoc;
 
 console.log(db);
 
