@@ -292,7 +292,36 @@ if(userId){
     );
 
 }
-            
+ const referrer =
+localStorage.getItem("referrer");
+
+if(referrer){
+
+    getDoc(
+        doc(db,"users",referrer)
+    ).then((snap)=>{
+
+        let refBalance = 0;
+
+        if(snap.exists()){
+            refBalance =
+            snap.data().balance || 0;
+        }
+
+        refBalance += 0.01;
+
+        setDoc(
+            doc(db,"users",referrer),
+            {
+                balance: refBalance
+            }
+        );
+
+        localStorage.removeItem("referrer");
+
+    });
+
+}           
             alert(
                 "🎁 Daily Reward Claimed!\n\n+0.001 TON"
             );
