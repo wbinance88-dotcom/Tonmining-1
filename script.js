@@ -4,6 +4,12 @@ const setDoc = window.firebaseSetDoc;
 const getDoc = window.firebaseGetDoc;
 
 console.log(db);
+if(!localStorage.getItem("userId")){
+    localStorage.setItem(
+        "userId",
+        "user_" + Date.now()
+    );
+}
 
 let balance = Number(localStorage.getItem("balance")) || 0;
 let seconds = Number(localStorage.getItem("seconds")) || 0;
