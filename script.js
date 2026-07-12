@@ -150,69 +150,40 @@ function updateTimer() {
 }
 
 
-function showPage(page) {
+function showPage(page){
 
-    if (page == "home") {
-
-    document.querySelector(".top-card").style.display = "block";
-
+document.querySelector(".container").style.display = "none";
 document.getElementById("profilePage").style.display = "none";
-
 document.getElementById("rewardPage").style.display = "none";
+document.getElementById("referralPage").style.display = "none";
+document.getElementById("taskPage").style.display = "none";
 
-    } else if (page == "referral") {
-
-    document.querySelector(".top-card").style.display = "none";
-
-    document.getElementById("profilePage").style.display = "none";
-
-    document.getElementById("rewardPage").style.display = "none";
-
-    document.getElementById("taskPage").style.display = "none";
-
-    document.getElementById("referralPage").style.display = "block";
-
-let link = "https://tonmining-1.onrender.com/?ref=" + userId;
-
-        let copy = confirm(
-    "👥 REFERRAL\n\n" +
-    "🎁 Reward: 0.01 TON per friend\n\n" +
-    "👥 Total Referrals: 0\n" +
-    "💰 Referral Earnings: 0.0000 TON\n\n" +
-    "🔗 Your Link:\n\n" +
-    link +
-    "\n\nPress OK to Copy Link"
-);
-
-if (copy) {
-    navigator.clipboard.writeText(link);
-    alert("✅ Referral Link Copied!");
+if(page=="home"){
+    document.querySelector(".container").style.display = "block";
 }
 
-} else if (page == "reward") {
+if(page=="referral"){
+    document.getElementById("referralPage").style.display = "block";
+}
 
-    document.querySelector(".top-card").style.display = "none";
-
-    document.getElementById("profilePage").style.display = "none";
-
+if(page=="reward"){
     document.getElementById("rewardPage").style.display = "block";
+}
 
-} else if (page == "task") {
-        alert("📋 Task (Coming Soon)");
+if(page=="task"){
+    document.getElementById("taskPage").style.display = "block";
+}
 
-} else if (page == "profile") {
-
-    document.querySelector(".top-card").style.display = "none";
-
+if(page=="profile"){
     document.getElementById("profilePage").style.display = "block";
 
     let userId =
-        localStorage.getItem("userId") || "Guest";
+    localStorage.getItem("userId") || "Guest";
 
     document.getElementById("username").innerHTML =
-        "User ID: " + userId;
+    "User ID: " + userId;
+}
 
-    }
 }
 document.addEventListener("DOMContentLoaded", function () {
 
