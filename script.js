@@ -265,6 +265,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 lastReward
             );
 
+            const userId =
+localStorage.getItem("userId");
+
+if(userId){
+
+    setDoc(
+        doc(db,"users",userId),
+        {
+            balance: balance
+        }
+    );
+
+}
+            
             alert(
                 "🎁 Daily Reward Claimed!\n\n+0.001 TON"
             );
