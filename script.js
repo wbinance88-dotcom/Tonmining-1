@@ -116,6 +116,20 @@ seconds = 60 * 60;
                 "timer"
             ).innerHTML = "Ready";
 
+            const userId =
+localStorage.getItem("userId");
+
+if(userId){
+
+    setDoc(
+        doc(db,"users",userId),
+        {
+            balance: balance
+        }
+    );
+
+}
+            
             alert(
                 "⛏ Mining Complete!\n\n+0.0009 TON"
             );
