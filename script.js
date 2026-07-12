@@ -265,3 +265,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+let rewardTimer = document.getElementById("rewardTimer");
+
+function updateRewardTimer() {
+
+    let lastReward =
+        parseInt(localStorage.getItem("lastReward")) || 0;
+
+    let now = Date.now();
+
+    let diff = 86400000 - (now - lastReward);
+
+    if (diff <= 0) {
+
+        rewardTimer.innerHTML = "✅ Ready to Claim";
+
+        return;
+    }
+
+    let hours =
+        Math.floor(diff / 3600000);
+
+    let minutes =
+        Math.floor((diff % 3600000) / 60000);
+
+    let seconds =
+        Math.floor((diff % 60000) / 1000);
+
+    rewardTimer.innerHTML =
+        `⏳ ${hours}h ${minutes}m ${seconds}s`;
+}
+
+setInterval(updateRewardTimer, 1000);
+
+updateRewardTimer();
