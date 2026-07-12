@@ -4,6 +4,14 @@ const setDoc = window.firebaseSetDoc;
 const getDoc = window.firebaseGetDoc;
 
 console.log(db);
+const params = new URLSearchParams(window.location.search);
+
+const ref = params.get("ref");
+
+if(ref && !localStorage.getItem("referrer")){
+    localStorage.setItem("referrer", ref);
+}
+
 if(!localStorage.getItem("userId")){
     localStorage.setItem(
         "userId",
