@@ -125,8 +125,16 @@ seconds = 60 * 60;
 }
 
 function updateBalance() {
-    document.getElementById("balance").innerHTML =
-        balance.toFixed(4) + " TON";
+
+    let text = balance.toFixed(4) + " TON";
+
+    if(document.getElementById("balance")){
+        document.getElementById("balance").innerHTML = text;
+    }
+
+    if(document.getElementById("profileBalance")){
+        document.getElementById("profileBalance").innerHTML = text;
+    }
 }
 function updateTimer() {
 
