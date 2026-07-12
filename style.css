@@ -113,3 +113,18 @@ body{
     font-weight:bold;
     cursor:pointer;
 }
+.coin-box{
+    animation: floatCoin 2s ease-in-out infinite;
+}
+
+@keyframes floatCoin{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
