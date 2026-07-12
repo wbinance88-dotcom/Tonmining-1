@@ -242,3 +242,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    let withdrawBtn = document.getElementById("withdrawBtn");
+
+    if (withdrawBtn) {
+
+        withdrawBtn.onclick = function () {
+
+            let box =
+                document.getElementById("withdrawPage");
+
+            if (box.style.display == "none") {
+                box.style.display = "block";
+            } else {
+                box.style.display = "none";
+            }
+
+        };
+
+    }
+
+});
