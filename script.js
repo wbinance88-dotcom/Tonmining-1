@@ -351,3 +351,23 @@ function updateRewardTimer() {
 setInterval(updateRewardTimer, 1000);
 
 updateRewardTimer();
+
+let copyBtn = document.getElementById("copyReferralBtn");
+
+if(copyBtn){
+
+    copyBtn.onclick = function(){
+
+        let userId =
+        localStorage.getItem("userId") || "Guest";
+
+        let refLink =
+        window.location.origin + "/?ref=" + userId;
+
+        navigator.clipboard.writeText(refLink);
+
+        alert("✅ Referral Link Copied!\n\n" + refLink);
+
+    };
+
+}
