@@ -42,22 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     clearInterval(timer);
 
-    balance += 0.0009;
+    document.getElementById("timer").innerHTML =
+    "Claim Available";
 
-    localStorage.setItem("balance", balance);
+    document.getElementById("mineBtn").disabled =
+    false;
 
-    updateBalance();
-
-    document.getElementById("timer").innerHTML = "Ready";
-
-    document.getElementById("mineBtn").disabled = false;
-
-    localStorage.removeItem("miningEndTime");
-
-    miningEndTime = 0;
-    seconds = 0;
-        
-    alert("⛏ Mining Complete!\n\n+0.0009 TON");
+    return;
     }
 
     
