@@ -415,6 +415,8 @@ function showAdsReward(){
 
         modal.style.display = "none";
 
+        claimReady = true;
+        
         alert("❌ Ads not completed\nNo reward");
     };
 
