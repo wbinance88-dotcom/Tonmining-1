@@ -23,6 +23,8 @@ let balance = Number(localStorage.getItem("balance")) || 0;
 let seconds = Number(localStorage.getItem("seconds")) || 0;
 let lastReward = Number(localStorage.getItem("lastReward")) || 0;
 let miningEndTime = Number(localStorage.getItem("miningEndTime")) || 0;
+let claimReady = false;
+
 document.addEventListener("DOMContentLoaded", function () {
     updateBalance();
     updateTimer();
