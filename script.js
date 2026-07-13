@@ -118,14 +118,24 @@ seconds = 10;
 
             clearInterval(timer);
 
-            balance += 0.0009;
+            claimReady = true;
 
-            localStorage.setItem(
-                "balance",
-                balance
-            );
+localStorage.removeItem(
+    "miningEndTime"
+);
 
-            updateBalance();
+miningEndTime = 0;
+seconds = 0;
+
+document.getElementById(
+    "mineBtn"
+).disabled = false;
+
+document.getElementById(
+    "timer"
+).innerHTML = "Claim Available";
+
+return;
 
             localStorage.removeItem(
                 "miningEndTime"
