@@ -257,68 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            balance += 0.001;
-
-            localStorage.setItem(
-                "balance",
-                balance
-            );
-
-            updateBalance();
-
-            lastReward = now;
-
-            localStorage.setItem(
-                "lastReward",
-                lastReward
-            );
-
-            const userId =
-localStorage.getItem("userId");
-
-if(userId){
-
-    setDoc(
-        doc(db,"users",userId),
-        {
-            balance: balance
-        }
-    );
-
-}
- const referrer =
-localStorage.getItem("referrer");
-
-if(referrer){
-
-    getDoc(
-        doc(db,"users",referrer)
-    ).then((snap)=>{
-
-        let refBalance = 0;
-
-        if(snap.exists()){
-            refBalance =
-            snap.data().balance || 0;
-        }
-
-        refBalance += 0.01;
-
-        setDoc(
-            doc(db,"users",referrer),
-            {
-                balance: refBalance
-            }
-        );
-
-        localStorage.removeItem("referrer");
-
-    });
-
-}           
-            alert(
-                "🎁 Daily Reward Claimed!\n\n+0.001 TON"
-            );
+            showAdsReward("daily");
 
         };
 
