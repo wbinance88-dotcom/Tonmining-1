@@ -386,3 +386,86 @@ if(copyBtn){
     };
 
 }
+
+function showAdsReward(){
+
+    let modal =
+    document.getElementById("adModal");
+
+    let adImage =
+    document.getElementById("adImage");
+
+    let adTimer =
+    document.getElementById("adTimer");
+
+    let closeBtn =
+    document.getElementById("closeAdBtn");
+
+    let ads = [
+        "https://picsum.photos/300/400?1",
+        "https://picsum.photos/300/400?2",
+        "https://picsum.photos/300/400?3"
+    ];
+
+    let index = 0;
+
+    modal.style.display = "block";
+
+    closeBtn.onclick = function(){
+
+        modal.style.display = "none";
+
+        alert("❌ Ads not completed\nNo reward");
+    };
+
+    function nextAd(){
+
+        if(index >= ads.length){
+
+            modal.style.display = "none";
+
+            balance += 0.0009;
+
+            localStorage.setItem(
+                "balance",
+                balance
+            );
+
+            updateBalance();
+
+            claimReady = false;
+
+            alert("⛏ Reward Claimed!\n+0.0009 TON");
+
+            return;
+        }
+
+        adImage.src = ads[index];
+
+        let sec = 5;
+
+        adTimer.innerHTML = sec;
+
+        let t = setInterval(function(){
+
+            sec--;
+
+            adTimer.innerHTML = sec;
+
+            if(sec <= 0){
+
+                clearInterval(t);
+
+                index++;
+
+                nextAd();
+
+            }
+
+        },1000);
+
+    }
+
+    nextAd();
+
+}
