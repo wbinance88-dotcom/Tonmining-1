@@ -195,6 +195,50 @@
 
 </div>
 
+    <div id="adModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+z-index:9999;
+">
+
+<button id="closeAdBtn" style="
+position:absolute;
+top:15px;
+right:15px;
+font-size:25px;
+padding:5px 10px;
+">
+✕
+</button>
+
+<div style="
+text-align:center;
+margin-top:80px;
+color:white;
+">
+
+<h2>Advertisement</h2>
+
+<img
+id="adImage"
+src=""
+style="
+width:90%;
+max-width:350px;
+border-radius:10px;
+">
+
+<h3 id="adTimer">10</h3>
+
+</div>
+
+    </div>
+    
 <script type="module" src="firebase.js"></script>
 <script src="script.js"></script>
 
