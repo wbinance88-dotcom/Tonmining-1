@@ -64,15 +64,7 @@ function startMining() {
 
     if(claimReady){
 
-    balance += 0.0009;
-
-    localStorage.setItem("balance", balance);
-
-    updateBalance();
-
-    claimReady = false;
-
-    alert("⛏ Reward Claimed!");
+    showAdsReward();
 
     return;
     }
