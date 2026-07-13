@@ -55,6 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     clearInterval(timer);
 
+        claimReady = true;
+
+localStorage.setItem(
+    "claimReady",
+    "true"
+);
+        
     document.getElementById("timer").innerHTML =
     "Claim Available";
 
