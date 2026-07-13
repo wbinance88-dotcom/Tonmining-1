@@ -403,7 +403,7 @@ if(copyBtn){
 
 }
 
-function showAdsReward(){
+function showAdsReward(type){
 
     let modal =
     document.getElementById("adModal");
