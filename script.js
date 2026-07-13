@@ -446,6 +446,11 @@ function showAdsReward(){
 
             claimReady = false;
 
+            localStorage.setItem(
+    "claimReady",
+    "false"
+);
+
             alert("⛏ Reward Claimed!\n+0.0009 TON");
 
             return;
