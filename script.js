@@ -86,7 +86,7 @@ seconds = 60 * 60;
         miningEndTime
     );
 
-    seconds = 60;
+
 
     document.getElementById(
         "mineBtn"
@@ -143,6 +143,7 @@ if(userId){
     );
 
 }
+console.log("MINING FINISHED");
             
             alert(
                 "⛏ Mining Complete!\n\n+0.0009 TON"
