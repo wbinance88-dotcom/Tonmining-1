@@ -379,27 +379,53 @@ function showAdsReward(type){
 
         if(index >= ads.length){
 
-            modal.style.display = "none";
+    modal.style.display = "none";
 
-            balance += 0.0009;
+    if(type === "mining"){
 
-            localStorage.setItem(
-                "balance",
-                balance
-            );
+        balance += 0.0009;
 
-            updateBalance();
+        localStorage.setItem(
+            "balance",
+            balance
+        );
 
-            claimReady = false;
+        updateBalance();
 
-            localStorage.setItem(
-    "claimReady",
-    "false"
-);
+        claimReady = false;
 
-            alert("⛏ Reward Claimed!\n+0.0009 TON");
+        localStorage.setItem(
+            "claimReady",
+            "false"
+        );
 
-            return;
+        alert("⛏ Reward Claimed!\n+0.0009 TON");
+    }
+
+    if(type === "daily"){
+
+        balance += 0.001;
+
+        localStorage.setItem(
+            "balance",
+            balance
+        );
+
+        updateBalance();
+
+        lastReward = Date.now();
+
+        localStorage.setItem(
+            "lastReward",
+            lastReward
+        );
+
+        alert(
+            "🎁 Daily Reward Claimed!\n\n+0.001 TON"
+        );
+    }
+
+    return;
         }
 
         adImage.src = ads[index];
