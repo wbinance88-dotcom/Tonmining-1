@@ -64,10 +64,6 @@ function startMining() {
 
     if(claimReady){
 
-    alert("Ads 1/3");
-    alert("Ads 2/3");
-    alert("Ads 3/3");
-
     balance += 0.0009;
 
     localStorage.setItem("balance", balance);
@@ -137,39 +133,6 @@ document.getElementById(
 
 return;
 
-            localStorage.removeItem(
-                "miningEndTime"
-            );
-
-            miningEndTime = 0;
-            seconds = 0;
-
-            document.getElementById(
-                "mineBtn"
-            ).disabled = false;
-
-            document.getElementById(
-                "timer"
-            ).innerHTML = "Ready";
-
-            const userId =
-localStorage.getItem("userId");
-
-if(userId){
-
-    setDoc(
-        doc(db,"users",userId),
-        {
-            balance: balance
-        }
-    );
-
-}
-console.log("MINING FINISHED");
-            
-            alert(
-                "⛏ Mining Complete!\n\n+0.0009 TON"
-            );
         }
 
     }, 1000);
