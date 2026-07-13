@@ -30,6 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
     updateBalance();
     updateTimer();
 
+    if(claimReady){
+
+    document.getElementById("timer").innerHTML =
+    "Claim Available";
+
+    document.getElementById("mineBtn").disabled =
+    false;
+
+    }
+    
     if (miningEndTime > Date.now()) {
     seconds = Math.ceil((miningEndTime - Date.now()) / 1000);
 
