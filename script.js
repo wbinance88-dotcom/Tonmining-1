@@ -62,6 +62,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function startMining() {
 
+    if(claimReady){
+
+    alert("Ads 1/3");
+    alert("Ads 2/3");
+    alert("Ads 3/3");
+
+    balance += 0.0009;
+
+    localStorage.setItem("balance", balance);
+
+    updateBalance();
+
+    claimReady = false;
+
+    alert("⛏ Reward Claimed!");
+
+    return;
+    }
+    
     if (miningEndTime > Date.now()) {
         alert("⏳ Mining already running");
         return;
