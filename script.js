@@ -82,7 +82,7 @@ function startMining() {
 
     if(claimReady){
 
-    showAdsReward();
+    showAdsReward("mining");
 
     return;
     }
