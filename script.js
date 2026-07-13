@@ -74,9 +74,6 @@ function startMining() {
         return;
     }
 
-    alert("Ads 1/3");
-    alert("Ads 2/3");
-    alert("Ads 3/3");
 
 miningEndTime = Date.now() + (10 * 1000);
 seconds = 10;
