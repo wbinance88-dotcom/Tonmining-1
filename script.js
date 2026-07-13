@@ -161,23 +161,31 @@ function updateBalance() {
 }
 function updateTimer() {
 
-    if (miningEndTime > 0) {
-        seconds = Math.max(
-            0,
-            Math.ceil((miningEndTime - Date.now()) / 1000)
-        );
-    }
+    if (miningEndTime > Date.now()) {
 
-    if (seconds <= 0) {
-        document.getElementById("timer").innerHTML = "Ready";
-        document.getElementById("mineBtn").disabled = false;
+        seconds = Math.ceil(
+            (miningEndTime - Date.now()) / 1000
+        );
+
+        let m = Math.floor(seconds / 60);
+        let s = seconds % 60;
+
+        document.getElementById("timer").innerHTML =
+        m + "m " + s + "s";
+
         return;
     }
 
-    let m = Math.floor(seconds / 60);
-    let s = seconds % 60;
+    if (claimReady) {
 
-    document.getElementById("timer").innerHTML = m + "m " + s + "s";
+        document.getElementById("timer").innerHTML =
+        "Claim Available";
+
+        return;
+    }
+
+    document.getElementById("timer").innerHTML =
+    "Ready";
 }
 
 
