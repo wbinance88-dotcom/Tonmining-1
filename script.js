@@ -440,11 +440,12 @@ if(userId){
     if(userId){
 
         setDoc(
-            doc(db,"users",userId),
-            {
-                balance: balance
-            }
-        );
+    doc(db,"users",userId),
+    {
+        balance: balance
+    },
+    { merge:true }
+);
 
     }
 
