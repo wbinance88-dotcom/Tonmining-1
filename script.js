@@ -102,26 +102,27 @@ seconds = 10;
 
         if (seconds <= 0) {
 
-            clearInterval(timer);
+    clearInterval(timer);
 
-            claimReady = true;
+    claimReady = true;
 
-localStorage.removeItem(
-    "miningEndTime"
-);
+    // Claim state သိမ်းမယ်
+    localStorage.setItem(
+        "claimReady",
+        "true"
+    );
 
-miningEndTime = 0;
-seconds = 0;
+    seconds = 0;
 
-document.getElementById(
-    "mineBtn"
-).disabled = false;
+    document.getElementById(
+        "mineBtn"
+    ).disabled = false;
 
-document.getElementById(
-    "timer"
-).innerHTML = "Claim Available";
+    document.getElementById(
+        "timer"
+    ).innerHTML = "Claim Available";
 
-return;
+    return;
 
         }
 
