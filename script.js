@@ -392,6 +392,20 @@ function showAdsReward(type){
 
         updateBalance();
 
+const userId =
+localStorage.getItem("userId");
+
+if(userId){
+
+    setDoc(
+        doc(db,"users",userId),
+        {
+            balance: balance
+        }
+    );
+
+}
+        
         claimReady = false;
 
         localStorage.setItem(
