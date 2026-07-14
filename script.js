@@ -476,6 +476,13 @@ alert("⛏ Reward Claimed!\n+0.0009 TON");
             document.getElementById("timer").innerHTML = "Ready";
 document.getElementById("mineBtn").disabled = false;
 updateTimer();
+
+            claimReady = false;
+
+document.getElementById("timer").innerHTML =
+    "0m 10s";
+
+document.getElementById("mineBtn").disabled = true;
             
     if(type === "daily"){
 
