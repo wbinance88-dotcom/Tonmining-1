@@ -1,5 +1,4 @@
-localStorage.removeItem("claimReady");
-localStorage.removeItem("miningEndTime");
+
 const db = window.firebaseDB;
 const doc = window.firebaseDoc;
 const setDoc = window.firebaseSetDoc;
