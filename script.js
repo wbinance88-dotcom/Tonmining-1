@@ -76,10 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function startMining() {
 
-    alert(
-"claimReady=" + claimReady +
-"\nminingEndTime=" + miningEndTime
-);
     
     if(claimReady){
 
@@ -430,11 +426,6 @@ if(userId){
 
         claimReady = false;
 
-localStorage.setItem(
-    "claimReady",
-    "false"
-);
-
 miningEndTime = 0;
 seconds = 0;
 
@@ -444,10 +435,6 @@ updateTimer();
 
 document.getElementById("mineBtn").disabled = false;
 
-        alert(
-    "claimReady = " + claimReady +
-    "\nminingEndTime = " + miningEndTime
-);
 
 alert("⛏ Reward Claimed!\n+0.0009 TON");
         
