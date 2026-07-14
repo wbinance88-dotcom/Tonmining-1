@@ -32,6 +32,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if(claimReady){
 
+        document.addEventListener("DOMContentLoaded", function () {
+
+    localStorage.removeItem("claimReady");
+    localStorage.removeItem("miningEndTime");
+    claimReady = false;
+
+    updateBalance();
+    updateTimer();
+
+    if(claimReady){
+
+        document.getElementById("timer").innerHTML =
+        "Claim Available";
+        
     document.getElementById("timer").innerHTML =
     "Claim Available";
 
