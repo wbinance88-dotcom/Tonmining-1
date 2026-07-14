@@ -32,6 +32,24 @@ console.log("miningEndTime =", miningEndTime);
 document.addEventListener("DOMContentLoaded", function () {
 
     updateBalance();
+
+    if (!localStorage.getItem("miningEndTime")) {
+
+    claimReady = false;
+
+    localStorage.setItem(
+        "claimReady",
+        "false"
+    );
+
+    miningEndTime = Date.now() + 10000;
+
+    localStorage.setItem(
+        "miningEndTime",
+        miningEndTime
+    );
+    }
+    
     updateTimer();
 
     if (
