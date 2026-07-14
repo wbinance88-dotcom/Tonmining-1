@@ -371,7 +371,7 @@ function showAdsReward(type){
 
         modal.style.display = "none";
 
-        claimReady = true;
+    
         
         alert("❌ Ads not completed\nNo reward");
     };
@@ -408,16 +408,45 @@ if(userId){
 }
         
         claimReady = false;
-miningEndTime = 0;
-seconds = 0;
 
 localStorage.setItem("claimReady", "false");
-localStorage.removeItem("miningEndTime");
-localStorage.removeItem("seconds");
 
-updateTimer();
+// Start new 10 second countdown
+miningEndTime = Date.now() + 10000;
 
-document.getElementById("mineBtn").disabled = false;
+localStorage.setItem(
+    "miningEndTime",
+    miningEndTime
+);
+
+document.getElementById("mineBtn").disabled = true;
+
+let miningTimer = setInterval(function () {
+
+    seconds = Math.ceil(
+        (miningEndTime - Date.now()) / 1000
+    );
+
+    updateTimer();
+
+    if (seconds <= 0) {
+
+        clearInterval(miningTimer);
+
+        claimReady = true;
+
+        localStorage.setItem(
+            "claimReady",
+            "true"
+        );
+
+        document.getElementById("timer").innerHTML =
+            "Claim Available";
+
+        document.getElementById("mineBtn").disabled = false;
+    }
+
+}, 1000);
 
 
 alert("⛏ Reward Claimed!\n+0.0009 TON");
