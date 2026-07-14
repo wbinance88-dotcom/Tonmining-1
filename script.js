@@ -427,15 +427,21 @@ if(userId){
             "false"
         );
 
-        miningEndTime = 0;
+        claimReady = false;
+
+localStorage.setItem(
+    "claimReady",
+    "false"
+);
+
+miningEndTime = 0;
 seconds = 0;
 
 localStorage.removeItem("miningEndTime");
-        
-        miningEndTime = 0;
-seconds = 0;
 
-localStorage.removeItem("miningEndTime");
+updateTimer();
+
+document.getElementById("mineBtn").disabled = false;
 
         alert(
     "claimReady = " + claimReady +
