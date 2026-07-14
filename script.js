@@ -436,6 +436,13 @@ localStorage.removeItem("miningEndTime");
 seconds = 0;
 
 localStorage.removeItem("miningEndTime");
+
+        alert(
+    "claimReady = " + claimReady +
+    "\nminingEndTime = " + miningEndTime
+);
+
+alert("⛏ Reward Claimed!\n+0.0009 TON");
         
         alert("⛏ Reward Claimed!\n+0.0009 TON");
     }
