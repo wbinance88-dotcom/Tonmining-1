@@ -30,29 +30,64 @@ document.addEventListener("DOMContentLoaded", function () {
     updateBalance();
     updateTimer();
 
-    if(claimReady){
-
-        document.addEventListener("DOMContentLoaded", function () {
-
-    localStorage.removeItem("claimReady");
-    localStorage.removeItem("miningEndTime");
-    claimReady = false;
+    document.addEventListener("DOMContentLoaded", function () {
 
     updateBalance();
     updateTimer();
 
-    if(claimReady){
+    if (claimReady) {
 
         document.getElementById("timer").innerHTML =
         "Claim Available";
-        
-    document.getElementById("timer").innerHTML =
-    "Claim Available";
 
-    document.getElementById("mineBtn").disabled =
-    false;
+        document.getElementById("mineBtn").disabled =
+        false;
 
     }
+
+    if (miningEndTime > Date.now()) {
+
+        seconds = Math.ceil(
+            (miningEndTime - Date.now()) / 1000
+        );
+
+        document.getElementById("mineBtn").disabled =
+        true;
+
+        let timer = setInterval(function () {
+
+            seconds = Math.ceil(
+                (miningEndTime - Date.now()) / 1000
+            );
+
+            updateTimer();
+
+            if (seconds <= 0) {
+
+                clearInterval(timer);
+
+                claimReady = true;
+
+                localStorage.setItem(
+                    "claimReady",
+                    "true"
+                );
+
+                document.getElementById("timer").innerHTML =
+                "Claim Available";
+
+                document.getElementById("mineBtn").disabled =
+                false;
+
+                return;
+
+            }
+
+        }, 1000);
+
+    }
+
+});
     
     if (miningEndTime > Date.now()) {
     seconds = Math.ceil((miningEndTime - Date.now()) / 1000);
