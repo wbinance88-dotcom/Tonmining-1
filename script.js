@@ -26,10 +26,6 @@ let miningEndTime = Number(localStorage.getItem("miningEndTime")) || 0;
 let claimReady =
 localStorage.getItem("claimReady") === "true";
 
-localStorage.removeItem("claimReady");
-localStorage.removeItem("miningEndTime");
-claimReady = false;
-
 document.addEventListener("DOMContentLoaded", function () {
 
     updateBalance();
