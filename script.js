@@ -31,11 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
     updateBalance();
     updateTimer();
 
-    if (claimReady) {
-        document.getElementById("timer").innerHTML =
-        "Claim Available";
+    if (
+    claimReady &&
+    miningEndTime <= Date.now()
+) {
+    document.getElementById("timer").innerHTML =
+    "Claim Available";
 
-        document.getElementById("mineBtn").disabled = false;
+    document.getElementById("mineBtn").disabled = false;
     }
 
     if (miningEndTime > Date.now()) {
