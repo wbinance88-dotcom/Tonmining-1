@@ -89,22 +89,6 @@ function startMining() {
         return;
     }
 
-    claimReady = false;
-
-localStorage.setItem(
-    "claimReady",
-    "false"
-);
-
-miningEndTime = Date.now() + (10 * 1000);
-seconds = 10;
-
-    localStorage.setItem(
-        "miningEndTime",
-        miningEndTime
-    );
-
-
 
     document.getElementById(
         "mineBtn"
