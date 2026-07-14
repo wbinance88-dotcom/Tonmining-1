@@ -27,28 +27,20 @@ let claimReady =
 localStorage.getItem("claimReady") === "true";
 
 document.addEventListener("DOMContentLoaded", function () {
+
     updateBalance();
     updateTimer();
 
-
     if (claimReady) {
-
         document.getElementById("timer").innerHTML =
         "Claim Available";
 
-        document.getElementById("mineBtn").disabled =
-        false;
-
+        document.getElementById("mineBtn").disabled = false;
     }
 
     if (miningEndTime > Date.now()) {
 
-        seconds = Math.ceil(
-            (miningEndTime - Date.now()) / 1000
-        );
-
-        document.getElementById("mineBtn").disabled =
-        true;
+        document.getElementById("mineBtn").disabled = true;
 
         let timer = setInterval(function () {
 
@@ -72,11 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("timer").innerHTML =
                 "Claim Available";
 
-                document.getElementById("mineBtn").disabled =
-                false;
-
-                return;
-
+                document.getElementById("mineBtn").disabled = false;
             }
 
         }, 1000);
