@@ -405,18 +405,12 @@ if(userId){
 }
         
         claimReady = false;
-
-        localStorage.setItem(
-            "claimReady",
-            "false"
-        );
-
-        claimReady = false;
-
 miningEndTime = 0;
 seconds = 0;
 
+localStorage.setItem("claimReady", "false");
 localStorage.removeItem("miningEndTime");
+localStorage.removeItem("seconds");
 
 updateTimer();
 
