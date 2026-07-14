@@ -80,6 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function startMining() {
 
+    alert(
+"claimReady=" + claimReady +
+"\nminingEndTime=" + miningEndTime
+);
+    
     if(claimReady){
 
     showAdsReward("mining");
