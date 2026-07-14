@@ -30,10 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     updateBalance();
     updateTimer();
 
-    document.addEventListener("DOMContentLoaded", function () {
-
-    updateBalance();
-    updateTimer();
 
     if (claimReady) {
 
