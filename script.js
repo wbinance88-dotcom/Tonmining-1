@@ -440,6 +440,10 @@ localStorage.removeItem("miningEndTime");
         alert("⛏ Reward Claimed!\n+0.0009 TON");
     }
 
+            document.getElementById("timer").innerHTML = "Ready";
+document.getElementById("mineBtn").disabled = false;
+updateTimer();
+            
     if(type === "daily"){
 
     balance += 0.001;
