@@ -85,43 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
     
-    if (miningEndTime > Date.now()) {
-    seconds = Math.ceil((miningEndTime - Date.now()) / 1000);
-
-    document.getElementById("mineBtn").disabled = true;
-
-    let timer = setInterval(function () {
-
-        seconds = Math.ceil((miningEndTime - Date.now()) / 1000);
-
-        updateTimer();
-
-    if (seconds <= 0) {
-
-    clearInterval(timer);
-
-        claimReady = true;
-
-localStorage.setItem(
-    "claimReady",
-    "true"
-);
-        
-    document.getElementById("timer").innerHTML =
-    "Claim Available";
-
-    document.getElementById("mineBtn").disabled =
-    false;
-
-    return;
-    }
-
-    
-
-    }, 1000);
-    }
-});
-    
 
 function startMining() {
 
